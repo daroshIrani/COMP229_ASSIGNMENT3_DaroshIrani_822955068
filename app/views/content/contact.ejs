@@ -7,42 +7,59 @@
 
 <div class = "container-fluid" align = "center">
     <h1><%= title %></h1>
+    <input type="hidden" name="id" value="<%= contact._id %>" >
     <div class = "container-sm">
     <form class="row g-3 needs-validation" id = "contactForm" action = "" method = "POST" >
         <div class="col-md-4">
           <label for="validationCustom01" class="form-label">First name</label>
-          <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+          <input type="text" 
+          name = "fName" 
+          class="form-control" 
+          id="validationCustom01" 
+          value="<%= contact.fName %>" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-4">
           <label for="validationCustom02" class="form-label">Last name</label>
-          <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+          <input type="text" 
+          name = "lName" 
+          class="form-control" 
+          id="validationCustom02" 
+          value="<%= contact.lName %>" required>
           <div class="valid-feedback">
             Looks good!
           </div>
         </div>
         <div class="col-md-4">
-          <label for="validationCustomUsername" class="form-label">Username</label>
+          <label for="validationCustomUsername" class="form-label">Email Address</label>
           <div class="input-group has-validation">
             <span class="input-group-text" id="inputGroupPrepend">Email</span>
-            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+            <input type="text" 
+            name = "contactEmail" 
+            class="form-control" 
+            id="validationCustomUsername" 
+            aria-describedby="inputGroupPrepend" 
+            value = "<%= contact.contactEmail %>" required>
             <div class="invalid-feedback">
-              Please choose a username.
+              Please enter an Email.
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <label for="validationCustom03" class="form-label">City</label>
-          <input type="text" class="form-control" id="validationCustom03" required>
+          <input type="text" 
+          name = "city" 
+          class="form-control" 
+          id="validationCustom03" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
         <div class="col-md-3">
           <label for="validationCustom04" class="form-label">Province</label>
-          <select class="form-select" id="validationCustom04" required>
+          <select class="form-select" name = "province" id="validationCustom04" required>
             <option selected disabled value="">Choose...</option>
             <option>ON</option>
             <option>BC</option>
@@ -58,10 +75,14 @@
           </div>
         </div>
         <div class="col-md-3">
-          <label for="validationCustom05" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="validationCustom05" required>
+          <label for="validationCustom05" class="form-label">Telephone Number</label>
+          <input type="number" 
+          name = "contactNumber" 
+          class="form-control" 
+          id="validationCustom05" 
+          value = "<%= contact.contactNumber %>" required>
           <div class="invalid-feedback">
-            Please provide a valid zip.
+            Please provide a valid contact number.
           </div>
         </div>
         <div class="col-12">
@@ -76,7 +97,7 @@
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" id = "contactFormbutton" type="submit" formaction="./home" formmethod="get">Submit</button> <!-- formaction attribute redirects the form submission to a specific url and choice of method for submission is through a 'get' since the router is setup as 'indexRouter.get'--> 
+          <button class="btn btn-primary" id = "contactFormbutton" type="submit" formaction="./home">Submit</button> <!-- formaction attribute redirects the form submission to a specific url and choice of method for submission is through a 'get' since the router is setup as 'indexRouter.get'--> 
           <button class="btn btn-primary" type="reset" >Reset</button>
         </div>
       </form>

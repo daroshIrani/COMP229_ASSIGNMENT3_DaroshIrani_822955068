@@ -5,6 +5,5 @@
 
 // session information is to be set here and global variables
 export const Secret = "MySecret"
-// Global Variable to store the form information from contact page
-export const formArray = [];
 
+export const MongoURI = "mongodb://127.0.0.1/media" // Media is the name of our db locally

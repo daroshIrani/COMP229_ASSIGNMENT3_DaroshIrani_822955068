@@ -6,7 +6,7 @@
 // Importing Router Object from express module
 import {Router} from "express";
 // Importing the functions from controller to run here
-import { displayaboutPage, displayhomePage, displayservicesPage, displaycontactPage, displayprojectsPage, displayresumeMe, displaycontactInfo } from "../controllers/index.controller.server.js";
+import { displayaboutPage, displayhomePage, displayservicesPage, displayprojectsPage, displayresumeMe, displaycontactPage } from "../controllers/index.controller.server.js";
 
 // Instantiating the router onject as a variable to use
 const indexRouter = Router();
@@ -20,7 +20,7 @@ indexRouter.get('/about', displayaboutPage);
 indexRouter.get('/contact', displaycontactPage);
 indexRouter.get('/projects', displayprojectsPage);
 indexRouter.get('/resumeMe', displayresumeMe);
-indexRouter.get('/contactCollection', displaycontactInfo);
+// indexRouter.get('/contactCollection', displaycontactInfo);
 
 
 
