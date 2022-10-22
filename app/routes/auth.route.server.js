@@ -1,3 +1,8 @@
+// Author : Darosh Irani
+// Student ID : 822955068
+// Filename : auth.route.server.js
+// Dated : October 22nd, 2022
+
 import {Router} from 'express';
 import { DisplayLoginPage, 
     DisplayRegisterPage, 

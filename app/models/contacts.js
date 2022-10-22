@@ -1,3 +1,8 @@
+// Author : Darosh Irani
+// Student ID : 822955068
+// Filename : contacts.js
+// Dated : October 22nd, 2022
+
 import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;

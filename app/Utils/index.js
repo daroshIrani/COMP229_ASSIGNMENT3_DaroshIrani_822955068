@@ -1,3 +1,8 @@
+// Author : Darosh Irani
+// Student ID : 822955068
+// Filename : index.js
+// Dated : October 22nd, 2022
+
 export function UserDisplayName(req){
     if(req.user){
         return req.user.displayName;

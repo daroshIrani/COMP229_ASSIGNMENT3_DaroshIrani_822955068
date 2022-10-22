@@ -1,7 +1,7 @@
 // Author : Darosh Irani
 // Student ID : 822955068
 // Filename : index.controller.server.js
-// Dated : October 2nd, 2022
+// Dated : October 22nd, 2022
 
 // Exporting functions that the router will use to render content into the template. Content and the template both are from View folder
 

@@ -1,3 +1,8 @@
+// Author : Darosh Irani
+// Student ID : 822955068
+// Filename : auth.controller.server.js
+// Dated : October 22nd, 2022
+
 import express from 'express';
 
 // need passport 
