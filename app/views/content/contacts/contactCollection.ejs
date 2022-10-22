@@ -8,10 +8,10 @@
 <div class="container">
     <h1>Contact List</h1>
 
-
+    <% if(displayName) { %>
     <a href="/contact-add" class="btn btn-primary" role="button">
         <i class="fas fa-plus-circle"></i> Add a Contact</a>
-
+    <% } %>
 
     
     <div class="row">
@@ -38,6 +38,8 @@
                             <td><%= contact[count].contactLastName %></td>              <!-- The object after contact[count]. is the databse object not the html field name-->
                             <td><%= contact[count].contactEmailAddress %></td>
                             <td><%= contact[count].contactNumber %></td>
+                            
+                            <% if(displayName) { %>
 
                             <td class="text-center col-1">
                                 <a href="/contact-update/<%= contact[count]._id %>"        
@@ -51,7 +53,7 @@
                                     <i class="fas fa-trash-alt"></i> Delete</a>         <!-- these buttons are not added until the row is populated-->
                             </td>
                             
-
+                            <% } %>
 
                         </tr>
                     <% } %>                                                             <!--For loop ends here **************************************************-->

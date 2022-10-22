@@ -7,6 +7,8 @@
 
 // Importing the needed modules
 import express  from "express";
+
+
 //****************************************************************************************** */
 //********************************************** Assignment 3 needed modules added here */
 import cookieParser from "cookie-parser";
@@ -14,6 +16,8 @@ import logger from 'morgan';
 import session from "express-session"
 //********************************************** Assignment 3 */
 //********************************************************************************************* */
+
+
 // ES Module fix for __dirname
 import path, {dirname} from 'path';
 import { fileURLToPath } from 'url';
@@ -22,11 +26,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 //****************************************************************************************** */
 ////*********************************************** Assignment 3 needed modules added here - Auth Step 1 - importing passprt, passport-local and flash modules */
-//import passport from 'passport';
-//import passportLocal from 'passport-local';
-//import flash from 'connect-flash';
-////*********************************************** Assignment 3 */
+import passport from 'passport';
+import passportLocal from 'passport-local';
+import flash from 'connect-flash';
+//*************************************************** Assignment 3 needed strategy definition - Auth Step 2 */
+let localStrategy = passportLocal.Strategy;
+//*************************************************** Assignment 3 - Auth Step 3 - Importing the USer model*/
+import User from './models/user.js';
+//*************************************************** */
 //****************************************************************************************** */
+
+
 
 //****************************************************************************************** */
 //************************************************* Assignment 3 - Mongoose modeule imopirted and DB setup with configuration module */
@@ -43,6 +53,7 @@ import indexRouter from './routes/index.route.server.js';
 //****************************************************************************************** */
 //************************************************** Assignment 3 - import contactRouter object for redirection */
 import contactRouter from "./routes/contacts.route.server.js";
+import authRouter from "./routes/auth.route.server.js"
 //************************************************** Assignment 3 */
 //****************************************************************************************** */
 
@@ -80,12 +91,33 @@ index.use(cookieParser());
 index.use(express.static(path.join(__dirname, '../public')));
 
 
+//******************************************************************************************* */
+//***************************************************** Assignment 3 - Auth STep 4 - Setup Express session module */
+index.use(session({
+    secret: Secret,
+    saveUninitialized: false, 
+    resave: false
+}));
+//****************************************************** Assignment 3 - Auth Step 5 - Setup Flash */
+index.use(flash());
+//****************************************************** Assignment 3 - Auth Step 6 - Inititalize Passport and Session */
+index.use(passport.initialize());
+index.use(passport.session());
+//****************************************************** Assignment 3 - Auth Step 7 - Implementing the strategy from above */
+passport.use(User.createStrategy());
+//****************************************************** Assignment 3 - Auth Step 8 - Setup Serialization and deserialization of passport containing user schema when stored on DB */
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+//***************************************************** */
+//******************************************************************************************* */
+
 // telling this file to use routing logic for index.ejs file from router folder which contains the file above
 index.use('/', indexRouter);
 
 //****************************************************************************************** */
-//**************************************************** Assinment 3 - WIring up the contact router */
+//**************************************************** Assinment 3 - WIring up the contact and Authorization router */
 index.use('/', contactRouter)
+index.use('/', authRouter);
 //**************************************************** Assignment 3 */
 //****************************************************************************************** */
 
