@@ -14,7 +14,7 @@ const contactRouter = Router();
 
 contactRouter.get('/contact-list', DisplayContactList);
 contactRouter.post('/contact-list', DisplayContactList);  
-contactRouter.get('/contact-add', AuthGuard, DisplayContactAddPage);      
+contactRouter.get('/contact-add',  DisplayContactAddPage);      
 contactRouter.post('/contact-add',AuthGuard, ProcessContactAddPage);
 contactRouter.post('/contact-update/:id',AuthGuard,  ProcessContactUpdatePage);
 contactRouter.get('/contact-update/:id', AuthGuard, DisplayContactsUpdatePage);

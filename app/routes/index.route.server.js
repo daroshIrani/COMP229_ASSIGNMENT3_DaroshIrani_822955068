@@ -6,8 +6,10 @@
 // Importing Router Object from express module
 import {Router} from "express";
 
+
 //****************************************************** Assignment 3 - added controller here to add to contact list */
 import { DisplayContactAddPage, ProcessContactAddPage } from "../controllers/contacts.controller.server.js";
+import { AuthGuard } from "../utils/index.js";
 //******************************************************************************************* */
 
 // Importing the functions from controller to run here
@@ -20,8 +22,8 @@ const indexRouter = Router();
 // setting the functions to run from the controllers as the router is directed to specific URL's
 indexRouter.get('/', displayhomePage);
 indexRouter.get('/home', displayhomePage);
-indexRouter.get('/services', displayservicesPage);
-indexRouter.get('/about', displayaboutPage);
+indexRouter.get('/services',  displayservicesPage);
+indexRouter.get('/about',  displayaboutPage);
 
 //**************************************************** Assignemtn 3 - changed code here  */
 indexRouter.get('/contact', DisplayContactAddPage); // Redirects to contact add page using DisplayContactAddPage contrtoller
@@ -30,7 +32,7 @@ indexRouter.post('/contact-add', ProcessContactAddPage) // Process addition of c
 
 indexRouter.get('/projects', displayprojectsPage);
 indexRouter.get('/resumeMe', displayresumeMe);
-// indexRouter.get('/contactCollection', displaycontactInfo);
+
 
 
 
