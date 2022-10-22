@@ -14,7 +14,7 @@ import User from '../models/user.js';
 // import DisplayName Utility method
 import { UserDisplayName } from '../utils/index.js';
 
-// Display Functions
+// Display Login Page Function
 export function DisplayLoginPage(req, res, next){
     if(!req.user){
         return res.render('index', {title: 'Login', page: 'login', messages: req.flash('loginMessage'), displayName: UserDisplayName(req) });
@@ -22,7 +22,7 @@ export function DisplayLoginPage(req, res, next){
 
     return res.redirect('/contact-list');
 }
-
+// Display Register Page function
 export function DisplayRegisterPage(req, res, next){
     if(!req.user){
         return res.render('index', {title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req)});
@@ -31,7 +31,7 @@ export function DisplayRegisterPage(req, res, next){
     return res.redirect('/contact-list');
 }
 
-// Processing Function
+// Login Processing Function
 export function ProcessLoginPage(req, res, next){
     passport.authenticate('local', function(err, user, info) {
         if(err){
@@ -56,7 +56,7 @@ export function ProcessLoginPage(req, res, next){
         
     })(req, res, next);
 }
-
+// Register Page processing function
 export function ProcessRegisterPage(req, res, next){
     let newUser = new User({
         username: req.body.username,
@@ -83,7 +83,7 @@ export function ProcessRegisterPage(req, res, next){
         });
     });
 }
-
+// Logout Button processing function
 export function ProcessLogoutPage(req, res, next){
     req.logOut(function(err){
         if(err){

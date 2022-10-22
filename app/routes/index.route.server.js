@@ -27,7 +27,7 @@ indexRouter.get('/about',  displayaboutPage);
 
 //**************************************************** Assignemtn 3 - changed code here  */
 indexRouter.get('/contact', DisplayContactAddPage); // Redirects to contact add page using DisplayContactAddPage contrtoller
-indexRouter.post('/contact-add', ProcessContactAddPage) // Process addition of contacts from Add contatc page
+indexRouter.post('/contact-add', ProcessContactAddPage) // Process addition of contacts from Add contatc page by non signed in u ser
 //************************************************************************************** */
 
 indexRouter.get('/projects', displayprojectsPage);
