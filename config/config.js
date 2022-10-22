@@ -8,4 +8,4 @@ export const Secret = "MySecret"
 
 //export const MongoURI = "mongodb://127.0.0.1/media" // Media is the name of our db locally
 
-export const MongoURI = "mongodb:mongodb+srv://Darosh:Wvam6305161!@cluster0.rgtxyxa.mongodb.net/Assignment3?retryWrites=true&w=majoritymedia"
+export const MongoURI = "mongodb+srv://darosh:darosh123@cluster0.rgtxyxa.mongodb.net/?retryWrites=true&w=majority"
