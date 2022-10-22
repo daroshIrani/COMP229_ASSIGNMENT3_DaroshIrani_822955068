@@ -7,16 +7,17 @@
 
 <div class = "container-fluid" align = "center">
     <h1><%= title %></h1>
-    <input type="hidden" name="id" value="<%= contact._id %>" >
+    
     <div class = "container-sm">
-    <form class="row g-3 needs-validation" id = "contactForm" action = "" method = "POST" >
-        <div class="col-md-4">
+    <form class="row g-3 needs-validation" id = "contactForm"  method = "POST" >
+      <input type="hidden" name="id" value="<%= contact._id %>" >  
+      <div class="col-md-4">
           <label for="validationCustom01" class="form-label">First name</label>
           <input type="text" 
           name = "fName" 
           class="form-control" 
           id="validationCustom01" 
-          value="<%= contact.fName %>" required>
+          value="<%= contact.fName %>" >
           <div class="valid-feedback">
             Looks good!
           </div>
@@ -27,7 +28,7 @@
           name = "lName" 
           class="form-control" 
           id="validationCustom02" 
-          value="<%= contact.lName %>" required>
+          value="<%= contact.lName %>" >
           <div class="valid-feedback">
             Looks good!
           </div>
@@ -41,7 +42,7 @@
             class="form-control" 
             id="validationCustomUsername" 
             aria-describedby="inputGroupPrepend" 
-            value = "<%= contact.contactEmail %>" required>
+            value = "<%= contact.contactEmail %>" >
             <div class="invalid-feedback">
               Please enter an Email.
             </div>
@@ -52,14 +53,14 @@
           <input type="text" 
           name = "city" 
           class="form-control" 
-          id="validationCustom03" required>
+          id="validationCustom03" >
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
         <div class="col-md-3">
           <label for="validationCustom04" class="form-label">Province</label>
-          <select class="form-select" name = "province" id="validationCustom04" required>
+          <select class="form-select" name = "province" id="validationCustom04" >
             <option selected disabled value="">Choose...</option>
             <option>ON</option>
             <option>BC</option>
@@ -80,14 +81,14 @@
           name = "contactNumber" 
           class="form-control" 
           id="validationCustom05" 
-          value = "<%= contact.contactNumber %>" required>
+          value = "<%= contact.contactNumber %>" >
           <div class="invalid-feedback">
             Please provide a valid contact number.
           </div>
         </div>
         <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" >
             <label class="form-check-label" for="invalidCheck">
               Agree to terms and conditions
             </label>
@@ -97,8 +98,10 @@
           </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" id = "contactFormbutton" type="submit" formaction="./home">Submit</button> <!-- formaction attribute redirects the form submission to a specific url and choice of method for submission is through a 'get' since the router is setup as 'indexRouter.get'--> 
-          <button class="btn btn-primary" type="reset" >Reset</button>
+          <button class="btn btn-primary" type="submit">Submit</button> <!-- formaction attribute redirects the form submission to a specific url and choice of method for submission is through a 'get' since the router is setup as 'indexRouter.get'--> 
+          <button class="btn btn-primary" type="reset"  >Reset</button>
+          <a href="/contact-list" class="btn btn-warning">
+            <i class="fas fa-undo"></i> Cancel</a> 
         </div>
       </form>
     </div>

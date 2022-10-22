@@ -8,11 +8,10 @@
 <div class="container">
     <h1>Contact List</h1>
 
-    <!-- Added in Week 5 - If the userName is available display the buttons to edit and delete and Add-->
-    <% if(displayName) { %>
-    <a href="/movie-add" class="btn btn-primary" role="button">
-        <i class="fas fa-plus-circle"></i> Add a Movie</a>
-    <% } %>
+
+    <a href="/contact-add" class="btn btn-primary" role="button">
+        <i class="fas fa-plus-circle"></i> Add a Contact</a>
+
 
     
     <div class="row">
@@ -31,34 +30,29 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody id="movieList">
+                <tbody id="contactList">
                     <!-- Repeatable Rows -->
-                    <% for(let count = 0; count < contactList.length; count++) { %>          <!--For loop that will fill up the table when items are added ****** -->
-                        <tr>                                                            <!-- <tr> stands for all the information in the row and that info ends at </tr>-->
-                            <th scope="row" class="text-center"><%= count + 1 %></th>   <!-- <th> provides the background for the row cells that will be filled across and <td> stands for the actual datat going in each cell - HTML -->
-                            <td><%= contactList[count].fName %></td>                          <!-- Movie on index [1] . name will be called from the array in the movies.js file and filled into the <td> for cell 1-->
-                            <td><%= contactList[count].lName %></td>
-                            <td><%= contactList[count].contactEmail %></td>
-                            <td><%= contactList[count].contactNumber %></td>
-                            <!-- <td><%= contactList[count].runtime %></td> -->
-                            
-                            <!-- Added in Week 5 - If the userName is available display the buttons to edit and delete-->
-                            <% if(displayName) { %>
+                    <% for(let count = 0; count < contact.length; count++) { %>          
+                        <tr>                                                            
+                            <th scope="row" class="text-center"><%= count + 1 %></th>   
+                            <td><%= contact[count].contactFirstName %></td>            <!-- Personal note - 'contact' is the JS object storing the contactcollection from our DB which gets the information from the contactModel imported from the schema model in our model folder for Contacts-->
+                            <td><%= contact[count].contactLastName %></td>              <!-- The object after contact[count]. is the databse object not the html field name-->
+                            <td><%= contact[count].contactEmailAddress %></td>
+                            <td><%= contact[count].contactNumber %></td>
 
                             <td class="text-center col-1">
-                                <a href="/movie-edit/<%= contact[count]._id %>"        
+                                <a href="/contact-update/<%= contact[count]._id %>"        
                                     class="btn btn-primary btn-sm">
-                                    <i class="fas fa-pencil-alt"></i> Edit</a>          <!-- these buttons are not added until the row is populated-->
+                                    <i class="fas fa-pencil-alt"></i> Update</a>          <!-- these buttons are not added until the row is populated-->
                             </td>
                             
                             <td class="text-center col-1">
-                                <a href="/movie-delete/<%= contact[count]._id %>"
+                                <a href="/contact-delete/<%= contact[count]._id %>"
                                     class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash-alt"></i> Delete</a>         <!-- these buttons are not added until the row is populated-->
                             </td>
                             
-                            <!-- Added in week 5 - end of if statement from above-->
-                            <% } %> 
+
 
                         </tr>
                     <% } %>                                                             <!--For loop ends here **************************************************-->
