@@ -17,7 +17,7 @@
           name = "fName" 
           class="form-control" 
           id="validationCustom01" 
-          value="<%= contact.fName %>" >
+          value="<%= contact.fName %>" required>
           <div class="valid-feedback">
             Looks good!
           </div>
@@ -28,7 +28,7 @@
           name = "lName" 
           class="form-control" 
           id="validationCustom02" 
-          value="<%= contact.lName %>" >
+          value="<%= contact.lName %>" required >
           <div class="valid-feedback">
             Looks good!
           </div>
@@ -42,7 +42,7 @@
             class="form-control" 
             id="validationCustomUsername" 
             aria-describedby="inputGroupPrepend" 
-            value = "<%= contact.contactEmail %>" >
+            value = "<%= contact.contactEmail %>" required >
             <div class="invalid-feedback">
               Please enter an Email.
             </div>
@@ -53,14 +53,14 @@
           <input type="text" 
           name = "city" 
           class="form-control" 
-          id="validationCustom03" >
+          id="validationCustom03" required>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
         <div class="col-md-3">
           <label for="validationCustom04" class="form-label">Province</label>
-          <select class="form-select" name = "province" id="validationCustom04" >
+          <select class="form-select" name = "province" id="validationCustom04" required >
             <option selected disabled value="">Choose...</option>
             <option>ON</option>
             <option>BC</option>
@@ -81,14 +81,14 @@
           name = "contactNumber" 
           class="form-control" 
           id="validationCustom05" 
-          value = "<%= contact.contactNumber %>" >
+          value = "<%= contact.contactNumber %>" required>
           <div class="invalid-feedback">
             Please provide a valid contact number.
           </div>
         </div>
         <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" >
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
             <label class="form-check-label" for="invalidCheck">
               Agree to terms and conditions
             </label>

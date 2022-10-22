@@ -1,8 +1,6 @@
 import contactModel from "../models/contacts.js";
 
 
-
-
 export function DisplayContactList(req,res,next){                                                 // We check if we have a list of things or an error - the function .find asks if 
     contactModel.find(function(err, contactCollection){                                            // the function has an error what to do and if it is successfull what to do
         if (err){                                                                               // we define what to do if there is an error - we do  error checking  
@@ -27,7 +25,7 @@ export function ProcessContactAddPage(req, res, next){
         contactEmailAddress: req.body.contactEmail,
     });
 
-    contactModel.create(newContact, (err, Contact) => {
+    contactModel.create(newContact, (err, contact) => {
         if(err){
             console.error(err);
             res.end(err);
@@ -40,13 +38,13 @@ export function ProcessContactAddPage(req, res, next){
 export function DisplayContactsUpdatePage(req, res, next){
     let id = req.params.id;
 
-    contactModel.findById(id, (err, Contact) => {
+    contactModel.findById(id, (err, contact) => {
         if(err){
             console.error(err);
             res.end(err);
         }
 
-        res.render('index', { title: 'Update Contact', page: '/contact', contact: Contact}); //, displayName: UserDisplayName(req) 
+        res.render('index', { title: 'Update Contact', page: '/contact', contact: contact}); //, displayName: UserDisplayName(req) 
     });    
 }
 

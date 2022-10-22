@@ -24,7 +24,7 @@ export function displayservicesPage(req,res,next){
 
  // rendereing the second template other than index - contact me template stored under views
  export function displaycontactPage(req,res,next){
-     res.render('contactme', {title:"Contact Me", page:'contact', contact:{}});
+     res.render('index', {title:"Contact Me", page:'contact-add', contact:{}});
  }
 
 export function displayresumeMe(req,res,next){
