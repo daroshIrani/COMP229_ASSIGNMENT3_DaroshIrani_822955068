@@ -12,7 +12,7 @@ import passport from 'passport';
 import User from '../models/user.js';
 
 // import DisplayName Utility method
-import { UserDisplayName } from '../utils/index.js';
+import { UserDisplayName } from '../Utils/utilsindex.js';
 
 // Display Login Page Function
 export function DisplayLoginPage(req, res, next){

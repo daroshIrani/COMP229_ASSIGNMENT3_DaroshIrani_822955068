@@ -7,7 +7,7 @@
 import contactModel from "../models/contacts.js";
 
 // Importing UserDisplayName to help authenticate
-import { UserDisplayName } from '../utils/index.js';
+import { UserDisplayName } from '../Utils/utilsindex.js';
 
 // Display Contact List function
 export function DisplayContactList(req,res,next){                                                 // We check if we have a list of things or an error - the function .find asks if 

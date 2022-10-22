@@ -5,7 +5,7 @@
 
 // Exporting functions that the router will use to render content into the template. Content and the template both are from View folder
 
-import { UserDisplayName } from '../utils/index.js';
+import { UserDisplayName } from '../Utils/utilsindex.js';
 
 // Here we implement a middleware function to handle the responses
 

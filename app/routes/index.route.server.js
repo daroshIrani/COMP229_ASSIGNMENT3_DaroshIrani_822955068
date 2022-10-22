@@ -9,7 +9,7 @@ import {Router} from "express";
 
 //****************************************************** Assignment 3 - added controller here to add to contact list */
 import { DisplayContactAddPage, ProcessContactAddPage } from "../controllers/contacts.controller.server.js";
-import { AuthGuard } from "../utils/index.js";
+import { AuthGuard } from "../Utils/utilsindex.js";
 //******************************************************************************************* */
 
 // Importing the functions from controller to run here

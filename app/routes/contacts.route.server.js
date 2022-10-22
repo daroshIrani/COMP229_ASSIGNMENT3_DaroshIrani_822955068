@@ -13,7 +13,7 @@ import { DisplayContactList,
     DisplayContactsUpdatePage, 
     ProcessContactDelete } from "../controllers/contacts.controller.server.js";
 
-import { AuthGuard } from "../utils/index.js";
+import { AuthGuard } from "../Utils/utilsindex.js";
 
 const contactRouter = Router();
 
